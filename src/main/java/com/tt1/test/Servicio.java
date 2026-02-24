@@ -6,15 +6,39 @@ import java.util.List;
 public class Servicio {
     private final Repositorio repo;
     private final MailerStub ms;
+
+    // Aquí en esta clase servicio es donde se realizara la validación de los datos, para
+    // que los pasados al repositorio, sean correctos.
     public Servicio(Repositorio r, MailerStub ms) {
         this.repo = r;
         this.ms = ms;
     }
-    public void crearTarea(String nombre, LocalDate fechaLimite) { throw new UnsupportedOperationException("Clase aún no implementada."); }
-    public void añadirEmail(String email) { throw new UnsupportedOperationException("Clase aún no implementada."); }
-    public void marcarComoFinalizada(String nombre) { throw new UnsupportedOperationException("Clase aún no implementada."); }
-    public List<ToDo> consultarPendientes() { throw new UnsupportedOperationException("Clase aún no implementada."); }
 
-    // Lógica automática de alertas
-    private void comprobarAlertasYNotificar() { throw new UnsupportedOperationException("Clase aún no implementada."); }
+    public void crearTarea(String nombre, LocalDate fechaLimite) {
+        if (nombre == null || nombre.isEmpty()) return; // Validamos el campo
+
+        ToDo nueva = new ToDo();
+        nueva.setNombre(nombre);
+        nueva.setFechaLimite(fechaLimite);
+        nueva.setCompletado(false);
+
+        repo.guardarTarea(nueva);
+    }
+
+    public void añadirEmail(String email) {
+        if (email != null && email.contains("@gmail.com")) { // Validamos que sea formato email
+            repo.guardarEmail(email);
+        }
+    }
+
+    public void marcarComoFinalizada(String nombre) {
+        repo.completarTarea(nombre);
+    }
+
+    public List<ToDo> consultarPendientes() {
+        return repo.obtenerTodos().stream()
+            .filter(t -> !t.isCompletado())
+            .toList();
+    }
+
 }

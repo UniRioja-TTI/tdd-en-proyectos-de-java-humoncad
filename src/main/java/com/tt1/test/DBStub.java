@@ -10,12 +10,35 @@ public class DBStub {
     private Set<String> agendaEmails = new HashSet<>();
 
     // CRUD de tareas
-    public void crear(ToDo tarea) { throw new UnsupportedOperationException("Clase aún no implementada."); }
-    public ToDo leer(String nombre) { throw new UnsupportedOperationException("Clase aún no implementada."); }
-    public void actualizar(ToDo tarea) { throw new UnsupportedOperationException("Clase aún no implementada."); }
-    public void borrar(String nombre) { throw new UnsupportedOperationException("Clase aún no implementada."); }
+    public void crear(ToDo tarea) {
+        this.tareas.add(tarea);
+    }
 
-    public List<ToDo> getTodasLasTareas() { throw new UnsupportedOperationException("Clase aún no implementada."); }
-    public Set<String> getAgendaEmails() { throw new UnsupportedOperationException("Clase aún no implementada."); }
-    public void agregarEmail(String email) { throw new UnsupportedOperationException("Clase aún no implementada."); }
+    public ToDo leer(String nombre) {
+        return tareas.stream()
+            .filter(t -> t.getNombre().equals(nombre))
+            .findFirst()
+            .orElse(null);
+    }
+
+    public void actualizar(ToDo tarea) {
+        borrar(tarea.getNombre());
+        crear(tarea);
+    }
+
+    public void borrar(String nombre) {
+        tareas.removeIf(t -> t.getNombre().equals(nombre));
+    }
+
+    public List<ToDo> getTodasLasTareas() {
+        return new ArrayList<>(tareas);
+    }
+
+    public Set<String> getAgendaEmails() {
+        return agendaEmails;
+    }
+
+    public void agregarEmail(String email) {
+        this.agendaEmails.add(email);
+    }
 }
