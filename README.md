@@ -18,6 +18,7 @@
 - [cite_start]Verificacion de integridad mediante pruebas automatizadas en JUnit[cite: 73, 79].
 
 ### Autor
-Blevins
+humoncad
 Universidad de la Rioja
 Curso 25/26
+
