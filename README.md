@@ -1,26 +1,23 @@
-# Práctica III: IDES y TDD en Java
-## Taller Transversal I: Programación y Proceso de Información
+# Practica III: TDD en Java
+## Taller Transversal I: Programacion y Proceso de Informacion
 
-Este proyecto forma parte del **Curso 25/26** de la Universidad de la Rioja. El objetivo principal es profundizar en la estructura de proyectos Java gestionados con **Maven** y la aplicación de metodologías de desarrollo guiado por pruebas (**TDD**).
+### Descripcion
+[cite_start]Este proyecto consiste en el desarrollo de un sistema de gestion de tareas pendientes (ToDo List) aplicando tecnicas de Desarrollo Guiado por Pruebas (TDD)[cite: 5, 31]. [cite_start]El enfoque principal es el uso de Maven para la gestion de dependencias y JUnit para la realizacion de pruebas unitarias e integracion[cite: 12, 60].
 
-### 🚀 Objetivos de la Práctica
-* [cite_start]Analizar la estructura básica de un proyecto Java (POM, recursos, tests)[cite: 12, 15].
-* [cite_start]Implementar un servicio de tareas pendientes (**ToDo List**) utilizando patrones como Stubs y Repositorios[cite: 31, 33].
-* [cite_start]Aplicar pruebas unitarias e integración mediante **JUnit**[cite: 56, 60].
-* [cite_start]Introducción a la **Inyección de Dependencias** con Spring Boot[cite: 84, 87].
+### Estructura del Proyecto
+- [cite_start]pom.xml: Archivo de configuracion de Maven que gestiona las dependencias y el ciclo de vida del proyecto[cite: 18].
+- [cite_start]src/main/java: Contiene el codigo fuente, incluyendo las clases ToDo, Repositorio, Servicios y Stubs[cite: 31, 33, 41].
+- [cite_start]src/main/resources: Ubicacion para archivos de configuracion y recursos externos del sistema[cite: 25].
+- [cite_start]src/test/java: Directorio destinado a las clases de prueba unitaria e integracion[cite: 55, 66].
 
-### 🛠️ Tecnologías utilizadas
-* **Java**: Lenguaje de programación principal.
-* [cite_start]**Maven**: Gestión de dependencias y construcción del proyecto[cite: 12].
-* [cite_start]**JUnit**: Framework para la automatización de pruebas[cite: 12, 56].
-* [cite_start]**Spring Boot**: Framework para servicios web y gestión de dependencias[cite: 87].
+### Funcionalidades
+- [cite_start]Creacion y gestion de tareas con nombre, descripcion y fecha limite[cite: 33, 43].
+- [cite_start]Persistencia simulada de datos mediante un Stub de base de datos[cite: 33, 35].
+- [cite_start]Sistema de alertas automaticas por correo electronico para tareas vencidas[cite: 45].
+- [cite_start]Consulta de tareas pendientes y gestion de una agenda de contactos[cite: 35, 44].
+- [cite_start]Verificacion de integridad mediante pruebas automatizadas en JUnit[cite: 73, 79].
 
-### 📋 Estructura del Proyecto
-* `src/main/java`: Contiene el código fuente de la aplicación (Servicios, Beans, Controladores).
-* [cite_start]`src/main/resources`: Archivos de configuración y recursos no compilables[cite: 25].
-* [cite_start]`src/test/java`: Suites de pruebas unitarias e integración[cite: 55].
-* [cite_start]`pom.xml`: Configuración de Maven y dependencias del proyecto[cite: 18].
-
----
-**Autor:** humoncad
-**Institución:** Universidad de la Rioja
+### Autor
+Blevins
+Universidad de la Rioja
+Curso 25/26
