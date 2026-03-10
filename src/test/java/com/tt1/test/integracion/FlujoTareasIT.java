@@ -30,7 +30,7 @@ class FlujoTareasIT {
 
         List<ToDo> pendientes = servicio.consultarPendientes();
 
-        assertFalse(pendientes.isEmpty(), "La lista de pendientes no debería estar vacía");
+        assertFalse(pendientes.isEmpty(), "La lista de pendientes no debería de estar vacía");
         assertEquals(nombreTarea, pendientes.get(0).getNombre());
     }
 }
