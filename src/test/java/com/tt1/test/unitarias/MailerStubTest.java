@@ -21,7 +21,7 @@ class MailerStubTest {
     void enviarCorreoDebeConfirmarExito() {
         MailerStub mailer = new MailerStub();
         // Act & Assert
-        assertTrue(mailer.enviarCorreo("socio@test.com", "Mensaje"), "Debe devolver true al enviar");
+        assertTrue(mailer.enviarCorreo("socio@test.com", "Mensaje"), "Debe devolver true cuando enviamos");
     }
 
     @Test

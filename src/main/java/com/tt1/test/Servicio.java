@@ -51,7 +51,7 @@ public class Servicio {
     }
 
     /**
-     * Marca una tarea como finalizada buscando por su nombre.
+     * Marca una tarea como finalizada, buscando por su nombre.
      * @param nombre Nombre de la tarea que se marca como finalizada.
      */
     public void marcarComoFinalizada(String nombre) {
