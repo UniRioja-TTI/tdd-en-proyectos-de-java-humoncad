@@ -3,7 +3,7 @@ name: Deploy Javadoc
 on:
   push:
     branches:
-      stable
+      - stable
 
 permissions:
   contents: write
@@ -27,5 +27,8 @@ jobs:
       - name: Deploy JavaDoc
         uses: MathieuSoysal/Javadoc-publisher.yml@v3.0.2
         with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           javadoc-branch: gh-pages
-          branch: stable
+          java-version: 21
+          target-folder: javadoc
+          project: maven
