@@ -52,14 +52,14 @@ public class Servicio {
 
     /**
      * Marca una tarea como finalizada, buscando por su nombre.
-     * @param nombre Nombre de la tarea que se marca como finalizada.
+     * @param nombre Nombre de la tarea que se marca finalizada.
      */
     public void marcarComoFinalizada(String nombre) {
         repo.completarTarea(nombre);
     }
 
     /**
-     * Recupera únicamente las tareas que no han sido marcadas como completadas.
+     * Recupera solamente las tareas que no han sido marcadas como completadas.
      * @return Una lista filtrada de tareas pendientes.
      */
     public List<ToDo> consultarPendientes() {
