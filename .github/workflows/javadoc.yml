@@ -1,0 +1,24 @@
+name: Deploy Javadoc
+
+on:
+  push:
+    branches:
+      - [cite_start]stable 
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy JavaDoc
+        uses: MathieuSoysal/Javadoc-publisher.yml@v3.0.0 
+        with:
+          javadoc-branch: gh-pages
+          branch: stable
