@@ -41,7 +41,7 @@ public class Servicio {
     }
 
     /**
-     * Añade un email al sistema validando que pertenezca al dominio @gmail.com.
+     * Añade un email al sistema que valida que pertenezca al dominio: @gmail.com.
      * @param email Dirección de correo a validar e insertar.
      */
     public void aniadirEmail(String email) {
