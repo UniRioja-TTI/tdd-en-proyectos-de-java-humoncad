@@ -25,7 +25,7 @@ jobs:
           cache: maven
 
       - name: Deploy JavaDoc
-        uses: MathieuSoysal/Javadoc-publisher.yml@v3.0.0
+        uses: MathieuSoysal/Javadoc-publisher.yml@v3.0.2
         with:
           javadoc-branch: gh-pages
           branch: stable
